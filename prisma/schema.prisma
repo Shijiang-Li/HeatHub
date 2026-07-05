@@ -1,0 +1,205 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum DataSourceType {
+  MERCHANT_FEED
+  AFFILIATE_FEED
+  OPEN_DATA
+  MANUAL
+}
+
+enum CategorySlug {
+  PORTABLE_AC
+  FAN
+  AC_INSTALLATION
+  AC_REPAIR
+  GENERATOR
+  ICE
+  COOLING_CENTER
+}
+
+enum AlertLevel {
+  NORMAL
+  WATCH
+  HIGH
+  EXTREME
+}
+
+enum ServiceType {
+  INSTALLATION
+  REPAIR
+  COOLING_CENTER
+}
+
+enum OutboundTargetType {
+  PRODUCT
+  MERCHANT
+  SERVICE
+}
+
+model DataSource {
+  id              String         @id
+  name            String
+  sourceType      DataSourceType @map("source_type")
+  website         String
+  licenseNotes    String         @map("license_notes")
+  updateFrequency String         @map("update_frequency")
+  allowedUse      String         @map("allowed_use")
+  createdAt       DateTime       @default(now()) @map("created_at")
+  updatedAt       DateTime       @updatedAt @map("updated_at")
+  merchants       Merchant[]
+
+  @@map("data_sources")
+}
+
+model City {
+  id          String            @id
+  name        String
+  slug        String            @unique
+  country     String
+  countryCode String            @map("country_code")
+  latitude    Decimal           @db.Decimal(9, 6)
+  longitude   Decimal           @db.Decimal(9, 6)
+  weather     WeatherSnapshot[]
+
+  @@index([countryCode])
+  @@index([name])
+  @@map("cities")
+}
+
+model Category {
+  id       String       @id
+  name     String
+  slug     CategorySlug @unique
+  products Product[]
+
+  @@map("categories")
+}
+
+model Merchant {
+  id               String     @id
+  name             String
+  slug             String     @unique
+  country          String
+  city             String
+  websiteUrl       String     @map("website_url")
+  logoUrl          String     @map("logo_url")
+  affiliateBaseUrl String?    @map("affiliate_base_url")
+  rating           Decimal    @db.Decimal(2, 1)
+  distanceKm       Decimal    @map("distance_km") @db.Decimal(6, 2)
+  dataSourceId     String     @map("data_source_id")
+  dataSource       DataSource @relation(fields: [dataSourceId], references: [id])
+  products         Product[]
+  createdAt        DateTime   @default(now()) @map("created_at")
+  updatedAt        DateTime   @updatedAt @map("updated_at")
+
+  @@index([city])
+  @@index([country])
+  @@index([rating])
+  @@map("merchants")
+}
+
+model Product {
+  id                    String       @id
+  merchantId            String       @map("merchant_id")
+  merchant              Merchant     @relation(fields: [merchantId], references: [id])
+  categoryId            String       @map("category_id")
+  category              Category     @relation(fields: [categoryId], references: [id])
+  name                  String
+  slug                  String       @unique
+  brand                 String
+  description           String
+  price                 Decimal      @db.Decimal(10, 2)
+  currency              String       @default("EUR")
+  deliveryEstimate      String       @map("delivery_estimate")
+  deliveryHours         Int          @map("delivery_hours")
+  pickupAvailable       Boolean      @default(false) @map("pickup_available")
+  installationAvailable Boolean      @default(false) @map("installation_available")
+  merchantProductUrl    String       @map("merchant_product_url")
+  affiliateUrl          String?      @map("affiliate_url")
+  imageUrl              String       @map("image_url")
+  sourceUpdatedAt       DateTime     @map("source_updated_at")
+  createdAt             DateTime     @default(now()) @map("created_at")
+  updatedAt             DateTime     @updatedAt @map("updated_at")
+
+  @@index([categoryId])
+  @@index([merchantId])
+  @@index([price])
+  @@index([deliveryHours])
+  @@index([sourceUpdatedAt])
+  @@map("products")
+}
+
+model ServiceProvider {
+  id                    String      @id
+  name                  String
+  slug                  String      @unique
+  serviceType           ServiceType @map("service_type")
+  country               String
+  city                  String
+  websiteUrl            String      @map("website_url")
+  phone                 String?
+  rating                Decimal     @db.Decimal(2, 1)
+  distanceKm            Decimal     @map("distance_km") @db.Decimal(6, 2)
+  emergencyAvailable    Boolean     @default(false) @map("emergency_available")
+  estimatedResponseTime String      @map("estimated_response_time")
+  responseHours         Int         @map("response_hours")
+  affiliateUrl          String?     @map("affiliate_url")
+  sourceUpdatedAt       DateTime    @map("source_updated_at")
+
+  @@index([city])
+  @@index([country])
+  @@index([serviceType])
+  @@index([rating])
+  @@map("service_providers")
+}
+
+model WeatherSnapshot {
+  id           String     @id
+  cityId       String     @map("city_id")
+  city         City       @relation(fields: [cityId], references: [id])
+  temperatureC Decimal    @map("temperature_c") @db.Decimal(4, 1)
+  condition    String
+  alertLevel   AlertLevel @map("alert_level")
+  provider     String
+  observedAt   DateTime   @map("observed_at")
+
+  @@index([cityId, observedAt])
+  @@index([alertLevel])
+  @@map("weather_snapshots")
+}
+
+model SearchEvent {
+  id          String   @id @default(cuid())
+  query       String?
+  city        String?
+  country     String?
+  category    String?
+  filtersJson Json?    @map("filters_json")
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  @@index([createdAt])
+  @@index([city])
+  @@index([category])
+  @@map("search_events")
+}
+
+model OutboundClick {
+  id             String             @id @default(cuid())
+  targetType     OutboundTargetType @map("target_type")
+  targetId       String             @map("target_id")
+  destinationUrl String             @map("destination_url")
+  affiliate      Boolean            @default(false)
+  referrerPath   String?            @map("referrer_path")
+  createdAt      DateTime           @default(now()) @map("created_at")
+
+  @@index([targetType, targetId])
+  @@index([createdAt])
+  @@map("outbound_clicks")
+}

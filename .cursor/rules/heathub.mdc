@@ -1,0 +1,20 @@
+---
+description: HeatHub product and engineering guardrails
+alwaysApply: true
+---
+
+HeatHub is an information aggregation and search platform.
+
+Never implement ecommerce features:
+
+- cart
+- checkout
+- payment
+- orders
+- refunds
+- inventory
+- logistics
+
+Implement search, comparison, map discovery, weather context, merchant redirects, and affiliate click tracking.
+
+Use TypeScript strict mode, reusable components, mobile-first UI, and SEO-friendly pages.

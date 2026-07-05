@@ -1,0 +1,30 @@
+{
+  "source": {
+    "id": "source-sample-affiliate",
+    "name": "Sample affiliate feed",
+    "website": "https://example.com/sample-affiliate-feed",
+    "license_notes": "Example feed for integration testing only.",
+    "allowed_use": "Display, comparison, and outbound referral testing."
+  },
+  "products": [
+    {
+      "id": "product-sample-feed-fan",
+      "merchant_id": "merchant-amsterdam-breeze",
+      "category": "fan",
+      "name": "Sample Feed Desk Fan",
+      "slug": "sample-feed-desk-fan",
+      "brand": "FeedCool",
+      "description": "Compact fan imported from a permitted affiliate feed.",
+      "price": 42,
+      "currency": "EUR",
+      "delivery_estimate": "Local delivery tomorrow",
+      "delivery_hours": 24,
+      "pickup_available": false,
+      "installation_available": false,
+      "merchant_product_url": "https://example.com/amsterdam-breeze/sample-feed-desk-fan",
+      "affiliate_url": "https://example.com/amsterdam-breeze/sample-feed-desk-fan?ref=heathub",
+      "image_url": "/product-placeholder.svg",
+      "source_updated_at": "2026-07-05T08:00:00.000Z"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" role="img" aria-label="Merchant placeholder">
+  <rect width="160" height="160" rx="12" fill="#eef7f3"/>
+  <path d="M42 72h76v50H42z" fill="#ffffff" stroke="#11856f" stroke-width="6"/>
+  <path d="M36 72l10-28h68l10 28z" fill="#f3b43f" stroke="#17201b" stroke-width="5"/>
+  <path d="M58 122V94h44v28" fill="#d94f32"/>
+</svg>
+*** Add File: public/product-placeholder.svg
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" role="img" aria-label="Cooling product placeholder">
+  <rect width="160" height="160" rx="12" fill="#eef7f3"/>
+  <rect x="48" y="30" width="64" height="100" rx="10" fill="#ffffff" stroke="#17201b" stroke-width="6"/>
+  <circle cx="80" cy="66" r="22" fill="#d94f32"/>
+  <path d="M80 44v44M58 66h44M65 51l30 30M95 51 65 81" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+  <path d="M64 104h32" stroke="#11856f" stroke-width="6" stroke-linecap="round"/>
+</svg>
