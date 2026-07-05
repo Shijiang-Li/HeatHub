@@ -1,4 +1,5 @@
 .next
+.vercel
 .tools
 node_modules
 out
