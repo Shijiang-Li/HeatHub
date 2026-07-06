@@ -52,24 +52,9 @@ export async function discoverOpenDataPlaces({
   }
 
   try {
-    const response = await fetch(getOverpassEndpoint(), {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
-      },
-      body: new URLSearchParams({
-        data: buildOverpassQuery(targetCity.latitude, targetCity.longitude, category)
-      }),
-      next: {
-        revalidate: getRevalidateSeconds()
-      }
-    });
-
-    if (!response.ok) {
-      return [];
-    }
-
-    const payload = (await response.json()) as OverpassResponse;
+    const payload = await fetchOverpassWithFallback(
+      buildOverpassQuery(targetCity.latitude, targetCity.longitude, category)
+    );
 
     return (payload.elements ?? [])
       .map((element) => toOpenDataPlace(element, targetCity.name))
@@ -98,7 +83,11 @@ function buildOverpassQuery(
   category: Category | undefined
 ): string {
   const clauses = getTagClauses(category)
-    .map((clause) => `nwr${clause}(around:${defaultRadiusMeters},${latitude},${longitude});`)
+    .flatMap((clause) => [
+      `node(around:${defaultRadiusMeters},${latitude},${longitude})${clause};`,
+      `way(around:${defaultRadiusMeters},${latitude},${longitude})${clause};`,
+      `relation(around:${defaultRadiusMeters},${latitude},${longitude})${clause};`
+    ])
     .join("\n");
 
   return `
@@ -149,7 +138,10 @@ function getTagClauses(category: Category | undefined): string[] {
     '["shop"="electronics"]',
     '["shop"="hardware"]',
     '["shop"="doityourself"]',
-    '["shop"="department_store"]'
+    '["shop"="department_store"]',
+    '["shop"="mall"]',
+    '["shop"="appliance"]',
+    '["shop"="houseware"]'
   ];
 }
 
@@ -202,8 +194,52 @@ function inferPlaceType(tags: Record<string, string>): OpenDataPlace["type"] {
   return "merchant";
 }
 
-function getOverpassEndpoint(): string {
-  return process.env.OVERPASS_ENDPOINT ?? "https://overpass-api.de/api/interpreter";
+async function fetchOverpassWithFallback(query: string): Promise<OverpassResponse> {
+  const endpoints = getOverpassEndpoints();
+
+  for (const endpoint of endpoints) {
+    try {
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+          "User-Agent": "HeatHub/0.1 open-data-discovery"
+        },
+        body: new URLSearchParams({
+          data: query
+        }),
+        next: {
+          revalidate: getRevalidateSeconds()
+        }
+      });
+
+      if (response.ok) {
+        return (await response.json()) as OverpassResponse;
+      }
+    } catch {
+      continue;
+    }
+  }
+
+  return {
+    elements: []
+  };
+}
+
+function getOverpassEndpoints(): string[] {
+  const configured = process.env.OVERPASS_ENDPOINTS ?? process.env.OVERPASS_ENDPOINT;
+
+  if (configured) {
+    return configured
+      .split(",")
+      .map((endpoint) => endpoint.trim())
+      .filter(Boolean);
+  }
+
+  return [
+    "https://overpass-api.de/api/interpreter",
+    "https://overpass.kumi.systems/api/interpreter"
+  ];
 }
 
 function getRevalidateSeconds(): number {

@@ -28,7 +28,7 @@ AFFILIATE_FEED_URLS
 FEED_REVALIDATE_SECONDS
 OPEN_DATA_DISCOVERY_ENABLED
 OPEN_DATA_REVALIDATE_SECONDS
-OVERPASS_ENDPOINT
+OVERPASS_ENDPOINTS
 ```
 
 For Supabase, use the PostgreSQL connection string from the Supabase project settings.
@@ -87,7 +87,7 @@ Only official APIs, merchant feeds, affiliate feeds, open data, or approved manu
 ```text
 OPEN_DATA_DISCOVERY_ENABLED="true"
 OPEN_DATA_REVALIDATE_SECONDS="900"
-OVERPASS_ENDPOINT="https://overpass-api.de/api/interpreter"
+OVERPASS_ENDPOINTS="https://overpass-api.de/api/interpreter,https://overpass.kumi.systems/api/interpreter"
 ```
 
 OpenStreetMap data can help find places, but it does not provide reliable real-time product prices, stock, or delivery promises.
