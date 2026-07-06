@@ -14,6 +14,20 @@ export const metadata: Metadata = {
     "Search and compare urgent cooling products, service providers, weather context, and official merchant links across Europe.",
   alternates: {
     canonical: "/"
+  },
+  openGraph: {
+    title: "HeatHub | Emergency cooling search for Europe",
+    description:
+      "Find cooling products, HVAC services, public cooling places, and official distributor channels during European heat waves.",
+    url: "/",
+    siteName: "HeatHub",
+    type: "website"
+  },
+  twitter: {
+    card: "summary",
+    title: "HeatHub | Emergency cooling search for Europe",
+    description:
+      "Find cooling products, HVAC services, public cooling places, and official distributor channels during European heat waves."
   }
 };
 
@@ -42,6 +56,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               <Link className="focus-ring rounded-md px-3 py-2 hover:bg-white" href="/guides">
                 {siteCopy.nav.guides}
               </Link>
+              <Link className="focus-ring rounded-md px-3 py-2 hover:bg-white" href="/promote">
+                {siteCopy.nav.promote}
+              </Link>
               <Link className="focus-ring rounded-md px-3 py-2 hover:bg-white" href="/about">
                 {siteCopy.nav.about}
               </Link>
@@ -58,6 +75,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               </Link>
               <Link className="focus-ring rounded-md hover:text-ink" href="/terms">
                 Terms
+              </Link>
+              <Link className="focus-ring rounded-md hover:text-ink" href="/promote">
+                Promote
               </Link>
             </div>
           </div>

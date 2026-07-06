@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { promotionGuides } from "@/lib/promotion";
 
 export const metadata: Metadata = {
   title: "Cooling guides",
@@ -33,6 +34,21 @@ export default function GuidesPage() {
           href="/guides/chinese-cooling-brands-europe"
         />
       </div>
+      <section className="grid gap-4" aria-labelledby="growth-guides">
+        <h2 id="growth-guides" className="text-2xl font-semibold">
+          Search demand guides
+        </h2>
+        <div className="grid gap-4 md:grid-cols-2">
+          {promotionGuides.map((guide) => (
+            <Guide
+              key={guide.slug}
+              title={guide.title}
+              body={guide.description}
+              href={`/guides/${guide.slug}`}
+            />
+          ))}
+        </div>
+      </section>
     </div>
   );
 }

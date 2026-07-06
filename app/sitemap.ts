@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { categoryLabels } from "@/lib/content";
 import { cities, merchants, products, serviceProviders } from "@/lib/data";
+import { promotionGuides } from "@/lib/promotion";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://heathub-xi.vercel.app";
 
@@ -11,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/map",
     "/guides",
     "/guides/chinese-cooling-brands-europe",
+    "/promote",
     "/about",
     "/privacy",
     "/terms"
@@ -50,12 +52,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date("2026-07-05")
   }));
 
+  const promotionGuideRoutes = promotionGuides.map((guide) => ({
+    url: `${siteUrl}/guides/${guide.slug}`,
+    lastModified: new Date("2026-07-06")
+  }));
+
   return [
     ...staticRoutes,
     ...productRoutes,
     ...merchantRoutes,
     ...serviceRoutes,
     ...cityRoutes,
-    ...categoryRoutes
+    ...categoryRoutes,
+    ...promotionGuideRoutes
   ];
 }

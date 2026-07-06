@@ -92,6 +92,8 @@ The app now includes:
 - Prisma schema and seed script for PostgreSQL or Supabase
 - Affiliate feed validation script
 - Sitemap and robots routes
+- Free promotion kit and long-tail SEO guide pages
 
 See `docs/13_SETUP_AND_OPERATIONS.md` for setup and operations.
 See `docs/14_DEPLOYMENT_CHECKLIST.md` for production deployment.
+See `docs/15_FREE_PROMOTION_PLAYBOOK.md` for free growth and outreach steps.

@@ -7,6 +7,7 @@ export const siteCopy = {
     search: "Search",
     map: "Map",
     guides: "Guides",
+    promote: "Promote",
     about: "About"
   },
   actions: {
