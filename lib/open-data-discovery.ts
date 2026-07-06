@@ -208,6 +208,7 @@ async function fetchOverpassWithFallback(query: string): Promise<OverpassRespons
         body: new URLSearchParams({
           data: query
         }),
+        signal: AbortSignal.timeout(6000),
         next: {
           revalidate: getRevalidateSeconds()
         }
