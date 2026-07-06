@@ -104,6 +104,89 @@ const distributorPartners = [
     focus: "AUX Romania agent and distributor channel",
     searchHref: "/search?q=macroclima",
     officialHref: "https://aux.com.ro/company/"
+  },
+  {
+    name: "Easy Air Conditioning",
+    brand: "Haier",
+    coverage: "United Kingdom",
+    focus: "Haier HVACR distributor partner in the UK market",
+    searchHref: "/search?q=easy%20air%20conditioning",
+    officialHref:
+      "https://haierhvac.eu/news/press-release/haier-hvac-solutions-and-easy-air-conditioning-perfect-match"
+  },
+  {
+    name: "Technoclima BV",
+    brand: "Haier",
+    coverage: "Netherlands",
+    focus: "Haier commercial air-conditioning and heat-pump distributor partner",
+    searchHref: "/search?q=technoclima",
+    officialHref:
+      "https://haierhvac.eu/news/press-release/haier-strengthens-its-presence-netherlands-through-strategic-partnership"
+  },
+  {
+    name: "KLIMA KFT",
+    brand: "Haier",
+    coverage: "Hungary",
+    focus: "Haier HVAC channel for Hungary and Central-Eastern Europe",
+    searchHref: "/search?q=klima%20kft",
+    officialHref:
+      "https://haierhvac.eu/news/press-release/haier-hvac-solutions-expands-its-presence-hungarian-market"
+  },
+  {
+    name: "Zymetric",
+    brand: "Midea",
+    coverage: "Poland",
+    focus: "Midea general representative and distributor in Poland",
+    searchHref: "/search?q=zymetric",
+    officialHref: "https://zymetric.pl/en/about-company"
+  },
+  {
+    name: "Smith Brothers Stores",
+    brand: "Midea",
+    coverage: "United Kingdom",
+    focus: "Midea HVAC nationwide distribution partner in the UK",
+    searchHref: "/search?q=smith%20brothers%20midea",
+    officialHref: "https://sbs.co.uk/2022/06/smith-brothers-and-midea-sign-game-changing-partnership-deal/"
+  },
+  {
+    name: "Elcom Trade",
+    brand: "Midea",
+    coverage: "Serbia",
+    focus: "Midea official distributor and general representative in Serbia",
+    searchHref: "/search?q=elcom%20trade",
+    officialHref: "https://elcomtrade.com/en/"
+  },
+  {
+    name: "Frigentis GmbH",
+    brand: "Haier",
+    coverage: "Austria",
+    focus: "Haier official where-to-buy distributor directory entry",
+    searchHref: "/search?q=frigentis",
+    officialHref: "https://haierhvac.eu/where-to-buy"
+  },
+  {
+    name: "Frigro NV",
+    brand: "Haier",
+    coverage: "Belgium",
+    focus: "Haier official where-to-buy distributor directory entry",
+    searchHref: "/search?q=frigro",
+    officialHref: "https://haierhvac.eu/where-to-buy"
+  },
+  {
+    name: "MB Frigo Grupa",
+    brand: "Haier",
+    coverage: "Croatia",
+    focus: "Haier official where-to-buy distributor directory entry",
+    searchHref: "/search?q=mb%20frigo",
+    officialHref: "https://haierhvac.eu/where-to-buy"
+  },
+  {
+    name: "Cooltec Energy Systems",
+    brand: "Haier",
+    coverage: "Cyprus",
+    focus: "Haier official where-to-buy distributor directory entry",
+    searchHref: "/search?q=cooltec",
+    officialHref: "https://haierhvac.eu/where-to-buy"
   }
 ];
 

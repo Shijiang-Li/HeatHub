@@ -130,6 +130,78 @@ export const cities: City[] = [
     countryCode: "FI",
     latitude: 60.1699,
     longitude: 24.9384
+  },
+  {
+    id: "city-leicester",
+    name: "Leicester",
+    slug: "leicester",
+    country: "United Kingdom",
+    countryCode: "GB",
+    latitude: 52.6369,
+    longitude: -1.1398
+  },
+  {
+    id: "city-birmingham",
+    name: "Birmingham",
+    slug: "birmingham",
+    country: "United Kingdom",
+    countryCode: "GB",
+    latitude: 52.4862,
+    longitude: -1.8904
+  },
+  {
+    id: "city-budapest",
+    name: "Budapest",
+    slug: "budapest",
+    country: "Hungary",
+    countryCode: "HU",
+    latitude: 47.4979,
+    longitude: 19.0402
+  },
+  {
+    id: "city-belgrade",
+    name: "Belgrade",
+    slug: "belgrade",
+    country: "Serbia",
+    countryCode: "RS",
+    latitude: 44.8125,
+    longitude: 20.4612
+  },
+  {
+    id: "city-vienna",
+    name: "Vienna",
+    slug: "vienna",
+    country: "Austria",
+    countryCode: "AT",
+    latitude: 48.2082,
+    longitude: 16.3738
+  },
+  {
+    id: "city-brussels",
+    name: "Brussels",
+    slug: "brussels",
+    country: "Belgium",
+    countryCode: "BE",
+    latitude: 50.8503,
+    longitude: 4.3517
+  },
+  {
+    id: "city-zagreb",
+    name: "Zagreb",
+    slug: "zagreb",
+    country: "Croatia",
+    countryCode: "HR",
+    latitude: 45.815,
+    longitude: 15.9819
+  },
+  {
+    id: "city-nicosia",
+    name: "Nicosia",
+    slug: "nicosia",
+    country: "Cyprus",
+    countryCode: "CY",
+    latitude: 35.1856,
+    longitude: 33.3823
   }
 ];
 
@@ -374,6 +446,149 @@ export const merchants: Merchant[] = [
     dataSourceId: "source-chinese-brand-europe-distributors",
     createdAt: "2026-07-06T09:00:00.000Z",
     updatedAt: "2026-07-06T09:00:00.000Z"
+  },
+  {
+    id: "merchant-haier-easy-air-uk-distributor",
+    name: "Easy Air Conditioning - Haier HVAC UK distributor",
+    slug: "easy-air-conditioning-haier-hvac-uk-distributor",
+    country: "United Kingdom",
+    city: "Birmingham",
+    coverageArea: "United Kingdom Haier HVACR distributor agent partner",
+    websiteUrl:
+      "https://haierhvac.eu/news/press-release/haier-hvac-solutions-and-easy-air-conditioning-perfect-match",
+    logoUrl: "/merchant-placeholder.svg",
+    rating: 4.3,
+    dataSourceId: "source-chinese-brand-europe-distributors",
+    createdAt: "2026-07-06T10:00:00.000Z",
+    updatedAt: "2026-07-06T10:00:00.000Z"
+  },
+  {
+    id: "merchant-haier-technoclima-netherlands-distributor",
+    name: "Technoclima BV - Haier HVAC Netherlands distributor",
+    slug: "technoclima-bv-haier-hvac-netherlands-distributor",
+    country: "Netherlands",
+    city: "Amsterdam",
+    coverageArea: "Netherlands Haier commercial air conditioning distributor agent partner",
+    websiteUrl:
+      "https://haierhvac.eu/news/press-release/haier-strengthens-its-presence-netherlands-through-strategic-partnership",
+    logoUrl: "/merchant-placeholder.svg",
+    rating: 4.3,
+    dataSourceId: "source-chinese-brand-europe-distributors",
+    createdAt: "2026-07-06T10:00:00.000Z",
+    updatedAt: "2026-07-06T10:00:00.000Z"
+  },
+  {
+    id: "merchant-haier-klima-hungary-channel",
+    name: "KLIMA KFT - Haier HVAC Hungary channel",
+    slug: "klima-kft-haier-hvac-hungary-channel",
+    country: "Hungary",
+    city: "Budapest",
+    coverageArea: "Hungary Central-Eastern Europe Haier HVAC distributor service channel",
+    websiteUrl:
+      "https://haierhvac.eu/news/press-release/haier-hvac-solutions-expands-its-presence-hungarian-market",
+    logoUrl: "/merchant-placeholder.svg",
+    rating: 4.2,
+    dataSourceId: "source-chinese-brand-europe-distributors",
+    createdAt: "2026-07-06T10:00:00.000Z",
+    updatedAt: "2026-07-06T10:00:00.000Z"
+  },
+  {
+    id: "merchant-midea-zymetric-poland-distributor",
+    name: "Zymetric - Midea general representative in Poland",
+    slug: "zymetric-midea-general-representative-poland",
+    country: "Poland",
+    city: "Warsaw",
+    coverageArea: "Poland Midea general representative distributor agent partner",
+    websiteUrl: "https://zymetric.pl/en/about-company",
+    logoUrl: "/merchant-placeholder.svg",
+    rating: 4.4,
+    dataSourceId: "source-chinese-brand-europe-distributors",
+    createdAt: "2026-07-06T10:00:00.000Z",
+    updatedAt: "2026-07-06T10:00:00.000Z"
+  },
+  {
+    id: "merchant-midea-smith-brothers-uk-distributor",
+    name: "Smith Brothers Stores - Midea UK distributor",
+    slug: "smith-brothers-stores-midea-uk-distributor",
+    country: "United Kingdom",
+    city: "Leicester",
+    coverageArea: "United Kingdom Midea HVAC nationwide distributor agent partner",
+    websiteUrl: "https://sbs.co.uk/2022/06/smith-brothers-and-midea-sign-game-changing-partnership-deal/",
+    logoUrl: "/merchant-placeholder.svg",
+    rating: 4.3,
+    dataSourceId: "source-chinese-brand-europe-distributors",
+    createdAt: "2026-07-06T10:00:00.000Z",
+    updatedAt: "2026-07-06T10:00:00.000Z"
+  },
+  {
+    id: "merchant-midea-elcom-serbia-distributor",
+    name: "Elcom Trade - Midea Serbia official distributor",
+    slug: "elcom-trade-midea-serbia-official-distributor",
+    country: "Serbia",
+    city: "Belgrade",
+    coverageArea: "Serbia Midea official distributor general representative agent partner",
+    websiteUrl: "https://elcomtrade.com/en/",
+    logoUrl: "/merchant-placeholder.svg",
+    rating: 4.2,
+    dataSourceId: "source-chinese-brand-europe-distributors",
+    createdAt: "2026-07-06T10:00:00.000Z",
+    updatedAt: "2026-07-06T10:00:00.000Z"
+  },
+  {
+    id: "merchant-haier-frigentis-austria-directory",
+    name: "Frigentis GmbH - Haier Austria distributor",
+    slug: "frigentis-gmbh-haier-austria-distributor",
+    country: "Austria",
+    city: "Vienna",
+    coverageArea: "Austria Haier official where-to-buy distributor directory",
+    websiteUrl: "https://haierhvac.eu/where-to-buy",
+    logoUrl: "/merchant-placeholder.svg",
+    rating: 4.1,
+    dataSourceId: "source-chinese-brand-europe-distributors",
+    createdAt: "2026-07-06T10:00:00.000Z",
+    updatedAt: "2026-07-06T10:00:00.000Z"
+  },
+  {
+    id: "merchant-haier-frigro-belgium-directory",
+    name: "Frigro NV - Haier Belgium distributor",
+    slug: "frigro-nv-haier-belgium-distributor",
+    country: "Belgium",
+    city: "Brussels",
+    coverageArea: "Belgium Haier official where-to-buy distributor directory",
+    websiteUrl: "https://haierhvac.eu/where-to-buy",
+    logoUrl: "/merchant-placeholder.svg",
+    rating: 4.1,
+    dataSourceId: "source-chinese-brand-europe-distributors",
+    createdAt: "2026-07-06T10:00:00.000Z",
+    updatedAt: "2026-07-06T10:00:00.000Z"
+  },
+  {
+    id: "merchant-haier-mb-frigo-croatia-directory",
+    name: "MB Frigo Grupa - Haier Croatia distributor",
+    slug: "mb-frigo-grupa-haier-croatia-distributor",
+    country: "Croatia",
+    city: "Zagreb",
+    coverageArea: "Croatia Haier official where-to-buy distributor directory",
+    websiteUrl: "https://haierhvac.eu/where-to-buy",
+    logoUrl: "/merchant-placeholder.svg",
+    rating: 4.1,
+    dataSourceId: "source-chinese-brand-europe-distributors",
+    createdAt: "2026-07-06T10:00:00.000Z",
+    updatedAt: "2026-07-06T10:00:00.000Z"
+  },
+  {
+    id: "merchant-haier-cooltec-cyprus-directory",
+    name: "Cooltec Energy Systems - Haier Cyprus distributor",
+    slug: "cooltec-energy-systems-haier-cyprus-distributor",
+    country: "Cyprus",
+    city: "Nicosia",
+    coverageArea: "Cyprus Haier official where-to-buy distributor directory",
+    websiteUrl: "https://haierhvac.eu/where-to-buy",
+    logoUrl: "/merchant-placeholder.svg",
+    rating: 4.1,
+    dataSourceId: "source-chinese-brand-europe-distributors",
+    createdAt: "2026-07-06T10:00:00.000Z",
+    updatedAt: "2026-07-06T10:00:00.000Z"
   }
 ];
 
@@ -737,6 +952,219 @@ export const products: Product[] = [
     sourceUpdatedAt: "2026-07-06T09:00:00.000Z",
     createdAt: "2026-07-06T09:00:00.000Z",
     updatedAt: "2026-07-06T09:00:00.000Z"
+  },
+  {
+    id: "product-haier-easy-air-uk-distributor",
+    merchantId: "merchant-haier-easy-air-uk-distributor",
+    category: "ac-installation",
+    name: "Haier HVAC via Easy Air Conditioning UK distributor",
+    slug: "haier-hvac-easy-air-conditioning-uk-distributor",
+    brand: "Haier",
+    description:
+      "Chinese-brand Haier HVAC distributor entry for the UK. Final product range, technical support, pricing, and availability are confirmed on the official partner source.",
+    price: 0,
+    currency: "EUR",
+    deliveryEstimate: "Confirmed by distributor partner",
+    deliveryHours: 24,
+    pickupAvailable: false,
+    installationAvailable: true,
+    merchantProductUrl:
+      "https://haierhvac.eu/news/press-release/haier-hvac-solutions-and-easy-air-conditioning-perfect-match",
+    imageUrl: "/product-placeholder.svg",
+    sourceUpdatedAt: "2026-07-06T10:00:00.000Z",
+    createdAt: "2026-07-06T10:00:00.000Z",
+    updatedAt: "2026-07-06T10:00:00.000Z"
+  },
+  {
+    id: "product-haier-technoclima-netherlands-distributor",
+    merchantId: "merchant-haier-technoclima-netherlands-distributor",
+    category: "ac-installation",
+    name: "Haier HVAC via Technoclima Netherlands distributor",
+    slug: "haier-hvac-technoclima-netherlands-distributor",
+    brand: "Haier",
+    description:
+      "Chinese-brand Haier commercial air-conditioning and heat-pump distributor entry for the Netherlands. Final availability and installer support are confirmed off-site.",
+    price: 0,
+    currency: "EUR",
+    deliveryEstimate: "Confirmed by distributor partner",
+    deliveryHours: 24,
+    pickupAvailable: false,
+    installationAvailable: true,
+    merchantProductUrl:
+      "https://haierhvac.eu/news/press-release/haier-strengthens-its-presence-netherlands-through-strategic-partnership",
+    imageUrl: "/product-placeholder.svg",
+    sourceUpdatedAt: "2026-07-06T10:00:00.000Z",
+    createdAt: "2026-07-06T10:00:00.000Z",
+    updatedAt: "2026-07-06T10:00:00.000Z"
+  },
+  {
+    id: "product-haier-klima-hungary-channel",
+    merchantId: "merchant-haier-klima-hungary-channel",
+    category: "ac-installation",
+    name: "Haier HVAC via KLIMA KFT Hungary channel",
+    slug: "haier-hvac-klima-kft-hungary-channel",
+    brand: "Haier",
+    description:
+      "Chinese-brand Haier HVAC channel entry for Hungary and Central-Eastern Europe. Final service, installation, and product availability are confirmed on the official source.",
+    price: 0,
+    currency: "EUR",
+    deliveryEstimate: "Confirmed by local channel",
+    deliveryHours: 24,
+    pickupAvailable: false,
+    installationAvailable: true,
+    merchantProductUrl:
+      "https://haierhvac.eu/news/press-release/haier-hvac-solutions-expands-its-presence-hungarian-market",
+    imageUrl: "/product-placeholder.svg",
+    sourceUpdatedAt: "2026-07-06T10:00:00.000Z",
+    createdAt: "2026-07-06T10:00:00.000Z",
+    updatedAt: "2026-07-06T10:00:00.000Z"
+  },
+  {
+    id: "product-midea-zymetric-poland-distributor",
+    merchantId: "merchant-midea-zymetric-poland-distributor",
+    category: "ac-installation",
+    name: "Midea via Zymetric Poland general representative",
+    slug: "midea-zymetric-poland-general-representative",
+    brand: "Midea",
+    description:
+      "Chinese-brand Midea general representative and distributor entry for Poland. Final partner network, product range, pricing, and availability are confirmed on Zymetric.",
+    price: 0,
+    currency: "EUR",
+    deliveryEstimate: "Confirmed by distributor partner",
+    deliveryHours: 24,
+    pickupAvailable: false,
+    installationAvailable: true,
+    merchantProductUrl: "https://zymetric.pl/en/about-company",
+    imageUrl: "/product-placeholder.svg",
+    sourceUpdatedAt: "2026-07-06T10:00:00.000Z",
+    createdAt: "2026-07-06T10:00:00.000Z",
+    updatedAt: "2026-07-06T10:00:00.000Z"
+  },
+  {
+    id: "product-midea-smith-brothers-uk-distributor",
+    merchantId: "merchant-midea-smith-brothers-uk-distributor",
+    category: "ac-installation",
+    name: "Midea HVAC via Smith Brothers Stores UK distributor",
+    slug: "midea-hvac-smith-brothers-stores-uk-distributor",
+    brand: "Midea",
+    description:
+      "Chinese-brand Midea nationwide HVAC distributor entry for the UK. Final availability, training, product range, and commercial terms are confirmed off-site.",
+    price: 0,
+    currency: "EUR",
+    deliveryEstimate: "Confirmed by distributor partner",
+    deliveryHours: 24,
+    pickupAvailable: false,
+    installationAvailable: true,
+    merchantProductUrl: "https://sbs.co.uk/2022/06/smith-brothers-and-midea-sign-game-changing-partnership-deal/",
+    imageUrl: "/product-placeholder.svg",
+    sourceUpdatedAt: "2026-07-06T10:00:00.000Z",
+    createdAt: "2026-07-06T10:00:00.000Z",
+    updatedAt: "2026-07-06T10:00:00.000Z"
+  },
+  {
+    id: "product-midea-elcom-serbia-distributor",
+    merchantId: "merchant-midea-elcom-serbia-distributor",
+    category: "ac-installation",
+    name: "Midea via Elcom Trade Serbia official distributor",
+    slug: "midea-elcom-trade-serbia-official-distributor",
+    brand: "Midea",
+    description:
+      "Chinese-brand Midea official distributor entry for Serbia. Final support, import, service, pricing, and product availability are confirmed on Elcom Trade.",
+    price: 0,
+    currency: "EUR",
+    deliveryEstimate: "Confirmed by distributor partner",
+    deliveryHours: 24,
+    pickupAvailable: false,
+    installationAvailable: true,
+    merchantProductUrl: "https://elcomtrade.com/en/",
+    imageUrl: "/product-placeholder.svg",
+    sourceUpdatedAt: "2026-07-06T10:00:00.000Z",
+    createdAt: "2026-07-06T10:00:00.000Z",
+    updatedAt: "2026-07-06T10:00:00.000Z"
+  },
+  {
+    id: "product-haier-frigentis-austria-directory",
+    merchantId: "merchant-haier-frigentis-austria-directory",
+    category: "ac-installation",
+    name: "Haier via Frigentis Austria distributor directory",
+    slug: "haier-frigentis-austria-distributor-directory",
+    brand: "Haier",
+    description:
+      "Chinese-brand Haier official where-to-buy directory entry for Austria. Final product, support, pricing, and availability are confirmed by the listed distributor.",
+    price: 0,
+    currency: "EUR",
+    deliveryEstimate: "Confirmed by official directory",
+    deliveryHours: 24,
+    pickupAvailable: false,
+    installationAvailable: true,
+    merchantProductUrl: "https://haierhvac.eu/where-to-buy",
+    imageUrl: "/product-placeholder.svg",
+    sourceUpdatedAt: "2026-07-06T10:00:00.000Z",
+    createdAt: "2026-07-06T10:00:00.000Z",
+    updatedAt: "2026-07-06T10:00:00.000Z"
+  },
+  {
+    id: "product-haier-frigro-belgium-directory",
+    merchantId: "merchant-haier-frigro-belgium-directory",
+    category: "ac-installation",
+    name: "Haier via Frigro Belgium distributor directory",
+    slug: "haier-frigro-belgium-distributor-directory",
+    brand: "Haier",
+    description:
+      "Chinese-brand Haier official where-to-buy directory entry for Belgium. Final partner details and availability are confirmed by the listed distributor.",
+    price: 0,
+    currency: "EUR",
+    deliveryEstimate: "Confirmed by official directory",
+    deliveryHours: 24,
+    pickupAvailable: false,
+    installationAvailable: true,
+    merchantProductUrl: "https://haierhvac.eu/where-to-buy",
+    imageUrl: "/product-placeholder.svg",
+    sourceUpdatedAt: "2026-07-06T10:00:00.000Z",
+    createdAt: "2026-07-06T10:00:00.000Z",
+    updatedAt: "2026-07-06T10:00:00.000Z"
+  },
+  {
+    id: "product-haier-mb-frigo-croatia-directory",
+    merchantId: "merchant-haier-mb-frigo-croatia-directory",
+    category: "ac-installation",
+    name: "Haier via MB Frigo Croatia distributor directory",
+    slug: "haier-mb-frigo-croatia-distributor-directory",
+    brand: "Haier",
+    description:
+      "Chinese-brand Haier official where-to-buy directory entry for Croatia. Final product range, support, and availability are confirmed off-site.",
+    price: 0,
+    currency: "EUR",
+    deliveryEstimate: "Confirmed by official directory",
+    deliveryHours: 24,
+    pickupAvailable: false,
+    installationAvailable: true,
+    merchantProductUrl: "https://haierhvac.eu/where-to-buy",
+    imageUrl: "/product-placeholder.svg",
+    sourceUpdatedAt: "2026-07-06T10:00:00.000Z",
+    createdAt: "2026-07-06T10:00:00.000Z",
+    updatedAt: "2026-07-06T10:00:00.000Z"
+  },
+  {
+    id: "product-haier-cooltec-cyprus-directory",
+    merchantId: "merchant-haier-cooltec-cyprus-directory",
+    category: "ac-installation",
+    name: "Haier via Cooltec Cyprus distributor directory",
+    slug: "haier-cooltec-cyprus-distributor-directory",
+    brand: "Haier",
+    description:
+      "Chinese-brand Haier official where-to-buy directory entry for Cyprus. Final distributor details, service area, and availability are confirmed on the official directory.",
+    price: 0,
+    currency: "EUR",
+    deliveryEstimate: "Confirmed by official directory",
+    deliveryHours: 24,
+    pickupAvailable: false,
+    installationAvailable: true,
+    merchantProductUrl: "https://haierhvac.eu/where-to-buy",
+    imageUrl: "/product-placeholder.svg",
+    sourceUpdatedAt: "2026-07-06T10:00:00.000Z",
+    createdAt: "2026-07-06T10:00:00.000Z",
+    updatedAt: "2026-07-06T10:00:00.000Z"
   }
 ];
 
@@ -891,6 +1319,78 @@ export const weatherSnapshots: WeatherSnapshot[] = [
     temperatureC: 25,
     condition: "Mild",
     alertLevel: "normal",
+    provider: "Demo weather provider",
+    observedAt: "2026-07-06T07:00:00.000Z"
+  },
+  {
+    id: "weather-leicester",
+    cityId: "city-leicester",
+    temperatureC: 27,
+    condition: "Warm",
+    alertLevel: "normal",
+    provider: "Demo weather provider",
+    observedAt: "2026-07-06T07:00:00.000Z"
+  },
+  {
+    id: "weather-birmingham",
+    cityId: "city-birmingham",
+    temperatureC: 27,
+    condition: "Warm",
+    alertLevel: "normal",
+    provider: "Demo weather provider",
+    observedAt: "2026-07-06T07:00:00.000Z"
+  },
+  {
+    id: "weather-budapest",
+    cityId: "city-budapest",
+    temperatureC: 34,
+    condition: "Hot",
+    alertLevel: "watch",
+    provider: "Demo weather provider",
+    observedAt: "2026-07-06T07:00:00.000Z"
+  },
+  {
+    id: "weather-belgrade",
+    cityId: "city-belgrade",
+    temperatureC: 35,
+    condition: "Heat advisory",
+    alertLevel: "high",
+    provider: "Demo weather provider",
+    observedAt: "2026-07-06T07:00:00.000Z"
+  },
+  {
+    id: "weather-vienna",
+    cityId: "city-vienna",
+    temperatureC: 32,
+    condition: "Warm",
+    alertLevel: "watch",
+    provider: "Demo weather provider",
+    observedAt: "2026-07-06T07:00:00.000Z"
+  },
+  {
+    id: "weather-brussels",
+    cityId: "city-brussels",
+    temperatureC: 28,
+    condition: "Warm",
+    alertLevel: "normal",
+    provider: "Demo weather provider",
+    observedAt: "2026-07-06T07:00:00.000Z"
+  },
+  {
+    id: "weather-zagreb",
+    cityId: "city-zagreb",
+    temperatureC: 33,
+    condition: "Hot",
+    alertLevel: "watch",
+    provider: "Demo weather provider",
+    observedAt: "2026-07-06T07:00:00.000Z"
+  },
+  {
+    id: "weather-nicosia",
+    cityId: "city-nicosia",
+    temperatureC: 38,
+    condition: "Heat advisory",
+    alertLevel: "high",
     provider: "Demo weather provider",
     observedAt: "2026-07-06T07:00:00.000Z"
   }
