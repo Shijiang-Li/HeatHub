@@ -9,7 +9,9 @@ import { SearchForm } from "@/components/search-form";
 import { ServiceCard } from "@/components/service-card";
 import { SortMenu } from "@/components/sort-menu";
 import { WeatherBanner } from "@/components/weather-banner";
+import { discoverOpenDataPlaces } from "@/lib/open-data-discovery";
 import { parseCategory, parseSort, searchHeatHubLive } from "@/lib/search";
+import type { SearchFilters } from "@/lib/types";
 
 export const metadata: Metadata = {
   title: "Search urgent cooling options",
@@ -30,7 +32,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
   const sort = parseSort(getParam(resolvedSearchParams.sort) ?? null);
   const delivery = getParam(resolvedSearchParams.delivery);
   const installation = getParam(resolvedSearchParams.installation) === "true";
-  const results = await searchHeatHubLive({
+  const filters: SearchFilters = {
     q,
     city,
     country,
@@ -38,7 +40,15 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
     sort,
     delivery: delivery === "today" || delivery === "pickup" ? delivery : undefined,
     installation
-  });
+  };
+  const [results, openDataPlaces] = await Promise.all([
+    searchHeatHubLive(filters),
+    discoverOpenDataPlaces({
+      city,
+      category,
+      limit: 12
+    })
+  ]);
 
   const hasResults =
     results.products.length > 0 || results.services.length > 0 || results.merchants.length > 0;
@@ -115,7 +125,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
             </section>
           )}
 
-          <MapPanel city={city} />
+          <MapPanel city={city} openDataPlaces={openDataPlaces} />
         </div>
       )}
     </div>

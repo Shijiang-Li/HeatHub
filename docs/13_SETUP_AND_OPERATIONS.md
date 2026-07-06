@@ -26,6 +26,9 @@ NEXT_PUBLIC_SITE_URL
 OPEN_METEO_ENABLED
 AFFILIATE_FEED_URLS
 FEED_REVALIDATE_SECONDS
+OPEN_DATA_DISCOVERY_ENABLED
+OPEN_DATA_REVALIDATE_SECONDS
+OVERPASS_ENDPOINT
 ```
 
 For Supabase, use the PostgreSQL connection string from the Supabase project settings.
@@ -76,6 +79,18 @@ Only official APIs, merchant feeds, affiliate feeds, open data, or approved manu
 ## Weather
 
 `/api/weather` uses Open-Meteo when enabled and falls back to curated local weather snapshots when unavailable.
+
+## Open Data Discovery
+
+`/api/discovery` uses OpenStreetMap data through an Overpass endpoint to discover nearby shops, service providers, and public places. This is live open data discovery, not unauthorized merchant scraping.
+
+```text
+OPEN_DATA_DISCOVERY_ENABLED="true"
+OPEN_DATA_REVALIDATE_SECONDS="900"
+OVERPASS_ENDPOINT="https://overpass-api.de/api/interpreter"
+```
+
+OpenStreetMap data can help find places, but it does not provide reliable real-time product prices, stock, or delivery promises.
 
 ## Product Boundary
 
