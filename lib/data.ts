@@ -27,6 +27,16 @@ export const dataSources: DataSource[] = [
       "Curated official brand pages and distributor/contact directories for Chinese cooling brands active in Europe. No scraping, stock claims, checkout, or price reuse.",
     updateFrequency: "Manual review",
     allowedUse: "Information display, comparison context, and official outbound redirects."
+  },
+  {
+    id: "source-chinese-brand-europe-distributors",
+    name: "Chinese-brand Europe distributor partners",
+    sourceType: "manual",
+    website: "https://haierhvac.eu/news",
+    licenseNotes:
+      "Curated official distributor, agent, and partner pages for Chinese HVAC brands in Europe. Partner status is based on public source pages and must be confirmed off-site before procurement.",
+    updateFrequency: "Manual review",
+    allowedUse: "Search, comparison context, and official outbound redirects."
   }
 ];
 
@@ -84,6 +94,42 @@ export const cities: City[] = [
     countryCode: "GB",
     latitude: 51.5072,
     longitude: -0.1276
+  },
+  {
+    id: "city-warsaw",
+    name: "Warsaw",
+    slug: "warsaw",
+    country: "Poland",
+    countryCode: "PL",
+    latitude: 52.2297,
+    longitude: 21.0122
+  },
+  {
+    id: "city-krakow",
+    name: "Krakow",
+    slug: "krakow",
+    country: "Poland",
+    countryCode: "PL",
+    latitude: 50.0647,
+    longitude: 19.945
+  },
+  {
+    id: "city-bucharest",
+    name: "Bucharest",
+    slug: "bucharest",
+    country: "Romania",
+    countryCode: "RO",
+    latitude: 44.4268,
+    longitude: 26.1025
+  },
+  {
+    id: "city-helsinki",
+    name: "Helsinki",
+    slug: "helsinki",
+    country: "Finland",
+    countryCode: "FI",
+    latitude: 60.1699,
+    longitude: 24.9384
   }
 ];
 
@@ -227,6 +273,107 @@ export const merchants: Merchant[] = [
     dataSourceId: "source-chinese-brand-europe-official",
     createdAt: "2026-07-06T08:00:00.000Z",
     updatedAt: "2026-07-06T08:00:00.000Z"
+  },
+  {
+    id: "merchant-haier-wolseley-uk-distributor",
+    name: "Wolseley UK - Haier HVAC distributor partner",
+    slug: "wolseley-uk-haier-hvac-distributor",
+    country: "United Kingdom",
+    city: "London",
+    coverageArea: "United Kingdom Haier HVAC distributor agent partner",
+    websiteUrl:
+      "https://haierhvac.eu/news/press-release/haier-hvac-uk-and-wolseley-announce-flagship-partnership-supply-complete",
+    logoUrl: "/merchant-placeholder.svg",
+    rating: 4.4,
+    dataSourceId: "source-chinese-brand-europe-distributors",
+    createdAt: "2026-07-06T09:00:00.000Z",
+    updatedAt: "2026-07-06T09:00:00.000Z"
+  },
+  {
+    id: "merchant-haier-hawco-uk-distributor",
+    name: "Hawco Limited - Haier HVAC distributor",
+    slug: "hawco-limited-haier-hvac-distributor",
+    country: "United Kingdom",
+    city: "London",
+    coverageArea: "United Kingdom Haier air conditioning distributor agent partner",
+    websiteUrl: "https://haierhvac.eu/news/press-release/haier-hvac-solutions-team-hawco",
+    logoUrl: "/merchant-placeholder.svg",
+    rating: 4.3,
+    dataSourceId: "source-chinese-brand-europe-distributors",
+    createdAt: "2026-07-06T09:00:00.000Z",
+    updatedAt: "2026-07-06T09:00:00.000Z"
+  },
+  {
+    id: "merchant-haier-masterwatt-netherlands-distributor",
+    name: "Masterwatt - Haier HVAC Netherlands partner",
+    slug: "masterwatt-haier-hvac-netherlands-partner",
+    country: "Netherlands",
+    city: "Amsterdam",
+    coverageArea: "Netherlands Haier HVAC distributor agent partner",
+    websiteUrl:
+      "https://haierhvac.eu/news/press-release/haier-hvac-solutions-europe-and-masterwatt-enter-strategic-partnership-drive",
+    logoUrl: "/merchant-placeholder.svg",
+    rating: 4.3,
+    dataSourceId: "source-chinese-brand-europe-distributors",
+    createdAt: "2026-07-06T09:00:00.000Z",
+    updatedAt: "2026-07-06T09:00:00.000Z"
+  },
+  {
+    id: "merchant-haier-kataikko-finland-distributor",
+    name: "Kataikko - Haier HVAC Finnish distributor",
+    slug: "kataikko-haier-hvac-finnish-distributor",
+    country: "Finland",
+    city: "Helsinki",
+    coverageArea: "Finland Nordic Haier HVAC distributor agent partner",
+    websiteUrl:
+      "https://haierhvac.eu/news/press-release/kataikko-new-finnish-distributor-joins-growing-network-haier-hvac-partners",
+    logoUrl: "/merchant-placeholder.svg",
+    rating: 4.2,
+    dataSourceId: "source-chinese-brand-europe-distributors",
+    createdAt: "2026-07-06T09:00:00.000Z",
+    updatedAt: "2026-07-06T09:00:00.000Z"
+  },
+  {
+    id: "merchant-aux-wienkra-poland-distributor",
+    name: "Wienkra - AUX Air Conditioner Polska",
+    slug: "wienkra-aux-air-conditioner-polska",
+    country: "Poland",
+    city: "Krakow",
+    coverageArea: "Poland AUX exclusive representative distributor agent partner",
+    websiteUrl: "https://auxcool.pl/kontakt/",
+    logoUrl: "/merchant-placeholder.svg",
+    rating: 4.3,
+    dataSourceId: "source-chinese-brand-europe-distributors",
+    createdAt: "2026-07-06T09:00:00.000Z",
+    updatedAt: "2026-07-06T09:00:00.000Z"
+  },
+  {
+    id: "merchant-aux-clima-polska-distributor",
+    name: "Clima Polska - AUX distributor in Poland",
+    slug: "clima-polska-aux-distributor",
+    country: "Poland",
+    city: "Warsaw",
+    coverageArea: "Poland Mazovia AUX distributor installation agent partner",
+    websiteUrl: "https://www.climapolska.com.pl/en/klimatyzatory-aux/",
+    logoUrl: "/merchant-placeholder.svg",
+    rating: 4.2,
+    dataSourceId: "source-chinese-brand-europe-distributors",
+    createdAt: "2026-07-06T09:00:00.000Z",
+    updatedAt: "2026-07-06T09:00:00.000Z"
+  },
+  {
+    id: "merchant-aux-macroclima-romania-agent",
+    name: "Macroclima Com - AUX Romania agent",
+    slug: "macroclima-com-aux-romania-agent",
+    country: "Romania",
+    city: "Bucharest",
+    coverageArea: "Romania AUX distributor agent partner",
+    websiteUrl: "https://aux.com.ro/company/",
+    logoUrl: "/merchant-placeholder.svg",
+    rating: 4.1,
+    dataSourceId: "source-chinese-brand-europe-distributors",
+    createdAt: "2026-07-06T09:00:00.000Z",
+    updatedAt: "2026-07-06T09:00:00.000Z"
   }
 ];
 
@@ -440,6 +587,156 @@ export const products: Product[] = [
     sourceUpdatedAt: "2026-07-06T08:00:00.000Z",
     createdAt: "2026-07-06T08:00:00.000Z",
     updatedAt: "2026-07-06T08:00:00.000Z"
+  },
+  {
+    id: "product-haier-wolseley-uk-distributor",
+    merchantId: "merchant-haier-wolseley-uk-distributor",
+    category: "ac-installation",
+    name: "Haier HVAC via Wolseley UK distributor partner",
+    slug: "haier-hvac-wolseley-uk-distributor",
+    brand: "Haier",
+    description:
+      "Chinese-brand Haier HVAC distributor partner entry for the UK. Distributor status, product range, pricing, and availability must be confirmed on the official partner source.",
+    price: 0,
+    currency: "EUR",
+    deliveryEstimate: "Confirmed by distributor partner",
+    deliveryHours: 24,
+    pickupAvailable: false,
+    installationAvailable: true,
+    merchantProductUrl:
+      "https://haierhvac.eu/news/press-release/haier-hvac-uk-and-wolseley-announce-flagship-partnership-supply-complete",
+    imageUrl: "/product-placeholder.svg",
+    sourceUpdatedAt: "2026-07-06T09:00:00.000Z",
+    createdAt: "2026-07-06T09:00:00.000Z",
+    updatedAt: "2026-07-06T09:00:00.000Z"
+  },
+  {
+    id: "product-haier-hawco-uk-distributor",
+    merchantId: "merchant-haier-hawco-uk-distributor",
+    category: "ac-installation",
+    name: "Haier HVAC via Hawco UK distributor",
+    slug: "haier-hvac-hawco-uk-distributor",
+    brand: "Haier",
+    description:
+      "Chinese-brand Haier HVAC distributor entry for the UK. Final partner details, technical range, pricing, and availability are confirmed off-site.",
+    price: 0,
+    currency: "EUR",
+    deliveryEstimate: "Confirmed by distributor partner",
+    deliveryHours: 24,
+    pickupAvailable: false,
+    installationAvailable: true,
+    merchantProductUrl: "https://haierhvac.eu/news/press-release/haier-hvac-solutions-team-hawco",
+    imageUrl: "/product-placeholder.svg",
+    sourceUpdatedAt: "2026-07-06T09:00:00.000Z",
+    createdAt: "2026-07-06T09:00:00.000Z",
+    updatedAt: "2026-07-06T09:00:00.000Z"
+  },
+  {
+    id: "product-haier-masterwatt-netherlands-partner",
+    merchantId: "merchant-haier-masterwatt-netherlands-distributor",
+    category: "ac-installation",
+    name: "Haier HVAC via Masterwatt Netherlands partner",
+    slug: "haier-hvac-masterwatt-netherlands-partner",
+    brand: "Haier",
+    description:
+      "Chinese-brand Haier HVAC distributor partner entry for the Netherlands. Final product, installation, and availability details are confirmed on the official partner source.",
+    price: 0,
+    currency: "EUR",
+    deliveryEstimate: "Confirmed by distributor partner",
+    deliveryHours: 24,
+    pickupAvailable: false,
+    installationAvailable: true,
+    merchantProductUrl:
+      "https://haierhvac.eu/news/press-release/haier-hvac-solutions-europe-and-masterwatt-enter-strategic-partnership-drive",
+    imageUrl: "/product-placeholder.svg",
+    sourceUpdatedAt: "2026-07-06T09:00:00.000Z",
+    createdAt: "2026-07-06T09:00:00.000Z",
+    updatedAt: "2026-07-06T09:00:00.000Z"
+  },
+  {
+    id: "product-haier-kataikko-finland-distributor",
+    merchantId: "merchant-haier-kataikko-finland-distributor",
+    category: "ac-installation",
+    name: "Haier HVAC via Kataikko Finnish distributor",
+    slug: "haier-hvac-kataikko-finnish-distributor",
+    brand: "Haier",
+    description:
+      "Chinese-brand Haier HVAC distributor entry for Finland and Nordic discovery. Product range, partner service, and availability are confirmed off-site.",
+    price: 0,
+    currency: "EUR",
+    deliveryEstimate: "Confirmed by distributor partner",
+    deliveryHours: 24,
+    pickupAvailable: false,
+    installationAvailable: true,
+    merchantProductUrl:
+      "https://haierhvac.eu/news/press-release/kataikko-new-finnish-distributor-joins-growing-network-haier-hvac-partners",
+    imageUrl: "/product-placeholder.svg",
+    sourceUpdatedAt: "2026-07-06T09:00:00.000Z",
+    createdAt: "2026-07-06T09:00:00.000Z",
+    updatedAt: "2026-07-06T09:00:00.000Z"
+  },
+  {
+    id: "product-aux-wienkra-poland-distributor",
+    merchantId: "merchant-aux-wienkra-poland-distributor",
+    category: "ac-installation",
+    name: "AUX via Wienkra Poland representative",
+    slug: "aux-wienkra-poland-representative",
+    brand: "AUX",
+    description:
+      "Chinese-brand AUX representative and distributor entry for Poland. Final product, installation, service, and availability information is confirmed on the official channel.",
+    price: 0,
+    currency: "EUR",
+    deliveryEstimate: "Confirmed by distributor partner",
+    deliveryHours: 24,
+    pickupAvailable: false,
+    installationAvailable: true,
+    merchantProductUrl: "https://auxcool.pl/kontakt/",
+    imageUrl: "/product-placeholder.svg",
+    sourceUpdatedAt: "2026-07-06T09:00:00.000Z",
+    createdAt: "2026-07-06T09:00:00.000Z",
+    updatedAt: "2026-07-06T09:00:00.000Z"
+  },
+  {
+    id: "product-aux-clima-polska-distributor",
+    merchantId: "merchant-aux-clima-polska-distributor",
+    category: "ac-installation",
+    name: "AUX via Clima Polska distributor",
+    slug: "aux-clima-polska-distributor",
+    brand: "AUX",
+    description:
+      "Chinese-brand AUX distributor and installation partner entry for Poland. Final service area, product range, and availability are confirmed on Clima Polska.",
+    price: 0,
+    currency: "EUR",
+    deliveryEstimate: "Confirmed by distributor partner",
+    deliveryHours: 24,
+    pickupAvailable: false,
+    installationAvailable: true,
+    merchantProductUrl: "https://www.climapolska.com.pl/en/klimatyzatory-aux/",
+    imageUrl: "/product-placeholder.svg",
+    sourceUpdatedAt: "2026-07-06T09:00:00.000Z",
+    createdAt: "2026-07-06T09:00:00.000Z",
+    updatedAt: "2026-07-06T09:00:00.000Z"
+  },
+  {
+    id: "product-aux-macroclima-romania-agent",
+    merchantId: "merchant-aux-macroclima-romania-agent",
+    category: "ac-installation",
+    name: "AUX via Macroclima Com Romania agent",
+    slug: "aux-macroclima-com-romania-agent",
+    brand: "AUX",
+    description:
+      "Chinese-brand AUX Romania agent entry. Final distributor status, installation service, product range, and availability are confirmed on the official Romania channel.",
+    price: 0,
+    currency: "EUR",
+    deliveryEstimate: "Confirmed by distributor partner",
+    deliveryHours: 24,
+    pickupAvailable: false,
+    installationAvailable: true,
+    merchantProductUrl: "https://aux.com.ro/company/",
+    imageUrl: "/product-placeholder.svg",
+    sourceUpdatedAt: "2026-07-06T09:00:00.000Z",
+    createdAt: "2026-07-06T09:00:00.000Z",
+    updatedAt: "2026-07-06T09:00:00.000Z"
   }
 ];
 
@@ -557,6 +854,42 @@ export const weatherSnapshots: WeatherSnapshot[] = [
     cityId: "city-london",
     temperatureC: 28,
     condition: "Warm",
+    alertLevel: "normal",
+    provider: "Demo weather provider",
+    observedAt: "2026-07-06T07:00:00.000Z"
+  },
+  {
+    id: "weather-warsaw",
+    cityId: "city-warsaw",
+    temperatureC: 31,
+    condition: "Warm",
+    alertLevel: "watch",
+    provider: "Demo weather provider",
+    observedAt: "2026-07-06T07:00:00.000Z"
+  },
+  {
+    id: "weather-krakow",
+    cityId: "city-krakow",
+    temperatureC: 30,
+    condition: "Warm",
+    alertLevel: "watch",
+    provider: "Demo weather provider",
+    observedAt: "2026-07-06T07:00:00.000Z"
+  },
+  {
+    id: "weather-bucharest",
+    cityId: "city-bucharest",
+    temperatureC: 36,
+    condition: "Heat advisory",
+    alertLevel: "high",
+    provider: "Demo weather provider",
+    observedAt: "2026-07-06T07:00:00.000Z"
+  },
+  {
+    id: "weather-helsinki",
+    cityId: "city-helsinki",
+    temperatureC: 25,
+    condition: "Mild",
     alertLevel: "normal",
     provider: "Demo weather provider",
     observedAt: "2026-07-06T07:00:00.000Z"

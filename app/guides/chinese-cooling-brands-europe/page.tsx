@@ -45,6 +45,68 @@ const channels = [
   }
 ];
 
+const distributorPartners = [
+  {
+    name: "Wolseley UK",
+    brand: "Haier",
+    coverage: "United Kingdom",
+    focus: "Haier HVAC distributor partner for complete comfort solutions",
+    searchHref: "/search?q=wolseley",
+    officialHref:
+      "https://haierhvac.eu/news/press-release/haier-hvac-uk-and-wolseley-announce-flagship-partnership-supply-complete"
+  },
+  {
+    name: "Hawco Limited",
+    brand: "Haier",
+    coverage: "United Kingdom",
+    focus: "Haier HVAC distributor partner for air-conditioning and HVAC discovery",
+    searchHref: "/search?q=hawco",
+    officialHref: "https://haierhvac.eu/news/press-release/haier-hvac-solutions-team-hawco"
+  },
+  {
+    name: "Masterwatt",
+    brand: "Haier",
+    coverage: "Netherlands",
+    focus: "Haier HVAC Netherlands partner for HVAC channel discovery",
+    searchHref: "/search?q=masterwatt",
+    officialHref:
+      "https://haierhvac.eu/news/press-release/haier-hvac-solutions-europe-and-masterwatt-enter-strategic-partnership-drive"
+  },
+  {
+    name: "Kataikko",
+    brand: "Haier",
+    coverage: "Finland",
+    focus: "Haier HVAC Finnish distributor in the Nordic partner network",
+    searchHref: "/search?q=kataikko",
+    officialHref:
+      "https://haierhvac.eu/news/press-release/kataikko-new-finnish-distributor-joins-growing-network-haier-hvac-partners"
+  },
+  {
+    name: "Wienkra",
+    brand: "AUX",
+    coverage: "Poland",
+    focus: "AUX Air Conditioner Polska representative and distributor channel",
+    searchHref: "/search?q=wienkra",
+    officialHref: "https://auxcool.pl/kontakt/"
+  },
+  {
+    name: "Clima Polska",
+    brand: "AUX",
+    coverage: "Poland",
+    focus: "AUX distributor and installation-oriented partner in Poland",
+    searchHref: "/search?q=clima%20polska",
+    officialHref: "https://www.climapolska.com.pl/en/klimatyzatory-aux/"
+  },
+  {
+    name: "Macroclima Com",
+    brand: "AUX",
+    coverage: "Romania",
+    focus: "AUX Romania agent and distributor channel",
+    searchHref: "/search?q=macroclima",
+    officialHref: "https://aux.com.ro/company/"
+  }
+];
+
 export default function ChineseCoolingBrandsEuropeGuide() {
   return (
     <div className="mx-auto grid max-w-5xl gap-6 px-4 py-8 sm:px-6">
@@ -95,6 +157,46 @@ export default function ChineseCoolingBrandsEuropeGuide() {
                   rel="noreferrer"
                 >
                   Open official channel
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="grid gap-4" aria-labelledby="distributor-partners">
+        <h2 id="distributor-partners" className="text-2xl font-semibold">
+          Local distributor and agent partners
+        </h2>
+        <div className="grid gap-4 md:grid-cols-2">
+          {distributorPartners.map((partner) => (
+            <article key={partner.name} className="rounded-md border border-line bg-white p-5">
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <h3 className="text-xl font-semibold">{partner.name}</h3>
+                  <p className="mt-1 text-sm font-medium text-ink/60">
+                    {partner.brand} / {partner.coverage}
+                  </p>
+                </div>
+                <span className="rounded-md bg-paper px-2 py-1 text-xs font-semibold">
+                  Distributor
+                </span>
+              </div>
+              <p className="mt-3 text-sm text-ink/70">{partner.focus}</p>
+              <div className="mt-4 flex flex-wrap gap-3">
+                <Link
+                  className="focus-ring rounded-md bg-mint px-4 py-2 text-sm font-semibold text-white hover:bg-heat"
+                  href={partner.searchHref}
+                >
+                  Search on HeatHub
+                </Link>
+                <a
+                  className="focus-ring rounded-md border border-line px-4 py-2 text-sm font-semibold hover:border-mint hover:text-mint"
+                  href={partner.officialHref}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Open source page
                 </a>
               </div>
             </article>

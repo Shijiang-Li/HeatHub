@@ -50,7 +50,17 @@ export function parseSort(value: string | null): SortOption {
 }
 
 export function normalize(value: string | undefined): string {
-  return value?.trim().toLowerCase() ?? "";
+  const normalized = value?.trim().toLowerCase() ?? "";
+
+  if (normalized.includes("代理") || normalized.includes("经销")) {
+    return "distributor";
+  }
+
+  if (normalized.includes("中国")) {
+    return "chinese";
+  }
+
+  return normalized;
 }
 
 export function findCity(city: string | undefined) {
