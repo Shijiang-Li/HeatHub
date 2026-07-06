@@ -19,13 +19,29 @@ HeatHub must remain an information and comparison service. Do not promote checko
 2. Submit `https://heathub-xi.vercel.app/sitemap.xml`.
 3. Verify the site in Bing Webmaster Tools.
 4. Submit the same sitemap.
-5. Check index coverage weekly.
-6. Inspect important URLs after each major deployment:
+5. Use IndexNow after deployments:
+   ```bash
+   npm run indexnow:submit
+   ```
+6. Check index coverage weekly.
+7. Inspect important URLs after each major deployment:
    - `/`
    - `/search`
    - `/promote`
    - `/guides/chinese-cooling-brands-europe`
    - `/guides/chinese-air-conditioner-distributors-europe`
+
+## IndexNow
+
+HeatHub hosts an IndexNow key file at:
+
+```text
+https://heathub-xi.vercel.app/5b2c631c716a4c9e91af157d2b230813.txt
+```
+
+The submission script builds a URL list from the app's routes, cities, categories, merchants, products, services, and guide pages, then posts it to the IndexNow endpoint.
+
+IndexNow helps participating search engines discover changed URLs faster. It does not guarantee ranking or indexing.
 
 ## Weekly Free Promotion Routine
 
