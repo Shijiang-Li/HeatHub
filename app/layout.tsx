@@ -5,7 +5,7 @@ import "@/app/globals.css";
 import { siteCopy } from "@/lib/content";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://heathub.example"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://heathub-xi.vercel.app"),
   title: {
     default: "HeatHub | Emergency cooling search for Europe",
     template: "%s | HeatHub"

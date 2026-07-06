@@ -89,7 +89,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
             category: categoryLabels[product.category],
             offers: {
               "@type": "Offer",
-              price: product.price,
+              price: product.price > 0 ? product.price : undefined,
               priceCurrency: product.currency,
               url: product.merchantProductUrl,
               seller: {

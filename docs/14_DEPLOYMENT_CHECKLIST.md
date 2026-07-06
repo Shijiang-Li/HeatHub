@@ -88,7 +88,7 @@ npm run db:migrate:deploy
 Use only approved HTTPS feeds:
 
 ```text
-AFFILIATE_FEED_URLS="https://merchant.example/feed.json,https://network.example/heathub.json"
+AFFILIATE_FEED_URLS="https://partner-feed.your-company.com/heathub.json"
 ```
 
 HeatHub does not assume scraping is allowed. Keep source rights recorded in the feed source metadata or database.

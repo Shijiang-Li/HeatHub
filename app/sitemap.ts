@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { categoryLabels } from "@/lib/content";
 import { cities, merchants, products, serviceProviders } from "@/lib/data";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://heathub.example";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://heathub-xi.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = ["", "/search", "/map", "/guides", "/about", "/privacy", "/terms"].map(

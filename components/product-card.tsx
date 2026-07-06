@@ -34,7 +34,10 @@ export function ProductCard({ product }: { product: ProductResult }) {
           <p className="mt-2 text-sm text-ink/70">{product.description}</p>
         </div>
         <dl className="grid grid-cols-2 gap-3 text-sm sm:grid-cols-4">
-          <Metric label="Price" value={`${product.currency} ${product.price}`} />
+          <Metric
+            label="Price"
+            value={product.price > 0 ? `${product.currency} ${product.price}` : "Check official site"}
+          />
           <Metric label="Delivery" value={product.deliveryEstimate} />
           <Metric label="Distance" value={`${product.merchant.distanceKm.toFixed(1)} km`} />
           <Metric label="Rating" value={`${product.merchant.rating.toFixed(1)} / 5`} />

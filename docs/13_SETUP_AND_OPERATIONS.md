@@ -70,7 +70,7 @@ Feed imports must come from approved sources with recorded usage rights. Scrapin
 Set `AFFILIATE_FEED_URLS` to a comma-separated list of HTTPS JSON feed URLs. Runtime search uses those approved feeds first and falls back to local seed data when no feed is configured or a feed fails validation.
 
 ```text
-AFFILIATE_FEED_URLS="https://merchant.example/feed.json,https://network.example/heathub.json"
+AFFILIATE_FEED_URLS="https://partner-feed.your-company.com/heathub.json"
 FEED_REVALIDATE_SECONDS="300"
 ```
 

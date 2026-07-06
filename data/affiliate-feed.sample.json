@@ -1,28 +1,28 @@
 {
   "source": {
-    "id": "source-sample-affiliate",
-    "name": "Sample affiliate feed",
-    "website": "https://example.com/sample-affiliate-feed",
-    "license_notes": "Example feed for integration testing only.",
+    "id": "source-coolblue-feed-template",
+    "name": "Coolblue feed template",
+    "website": "https://www.coolblue.nl/en/air-cooling",
+    "license_notes": "Template structure for an approved partner feed. Replace with contracted feed terms before production import.",
     "allowed_use": "Display, comparison, and outbound referral testing."
   },
   "products": [
     {
-      "id": "product-sample-feed-fan",
-      "merchant_id": "merchant-amsterdam-breeze",
+      "id": "product-coolblue-feed-template",
+      "merchant_id": "merchant-coolblue-netherlands",
       "category": "fan",
-      "name": "Sample Feed Desk Fan",
-      "slug": "sample-feed-desk-fan",
-      "brand": "FeedCool",
-      "description": "Compact fan imported from a permitted affiliate feed.",
-      "price": 42,
+      "name": "Partner feed air cooling item",
+      "slug": "partner-feed-air-cooling-item",
+      "brand": "Partner feed",
+      "description": "Template item imported from a permitted affiliate feed.",
+      "price": 0,
       "currency": "EUR",
       "delivery_estimate": "Local delivery tomorrow",
       "delivery_hours": 24,
       "pickup_available": false,
       "installation_available": false,
-      "merchant_product_url": "https://example.com/amsterdam-breeze/sample-feed-desk-fan",
-      "affiliate_url": "https://example.com/amsterdam-breeze/sample-feed-desk-fan?ref=heathub",
+      "merchant_product_url": "https://www.coolblue.nl/en/air-cooling",
+      "affiliate_url": "https://www.coolblue.nl/en/air-cooling",
       "image_url": "/product-placeholder.svg",
       "source_updated_at": "2026-07-05T08:00:00.000Z"
     }
