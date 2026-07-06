@@ -93,7 +93,8 @@ function textMatchesProduct(
     product.category,
     merchant?.name,
     merchant?.city,
-    merchant?.country
+    merchant?.country,
+    merchant?.coverageArea
   ]
     .filter(Boolean)
     .join(" ")
@@ -111,6 +112,39 @@ function textMatchesService(service: ServiceProvider, query: string): boolean {
     .join(" ")
     .toLowerCase()
     .includes(query);
+}
+
+function merchantCoversCity(merchant: Merchant, city: string): boolean {
+  if (!city) {
+    return true;
+  }
+
+  const coverage = merchant.coverageArea?.toLowerCase() ?? "";
+  const matchedCity = findCity(city);
+
+  return (
+    merchant.city.toLowerCase() === city ||
+    coverage.includes(city) ||
+    (Boolean(matchedCity) && coverage.includes("europe"))
+  );
+}
+
+function merchantCoversCountry(merchant: Merchant, country: string): boolean {
+  if (!country) {
+    return true;
+  }
+
+  const coverage = merchant.coverageArea?.toLowerCase() ?? "";
+
+  return (
+    merchant.country.toLowerCase() === country ||
+    coverage.includes(country) ||
+    coverage.includes("europe")
+  );
+}
+
+function merchantDistanceForSort(merchant: Merchant): number {
+  return merchant.distanceKm ?? Number.MAX_SAFE_INTEGER;
 }
 
 function freshnessScore(updatedAt: string): number {
@@ -199,8 +233,9 @@ function scoreProduct(
   }
 
   const deliveryScore = Math.max(0, 30 - product.deliveryHours);
-  const distanceScore = Math.max(0, 15 - merchant.distanceKm * 2);
-  const priceScore = Math.max(0, 20 - product.price / 40);
+  const distanceScore =
+    merchant.distanceKm === undefined ? 4 : Math.max(0, 15 - merchant.distanceKm * 2);
+  const priceScore = product.price > 0 ? Math.max(0, 20 - product.price / 40) : 0;
   const ratingScore = merchant.rating * 4;
   const installScore = product.installationAvailable ? 7 : 0;
   const score =
@@ -254,7 +289,7 @@ function sortProducts(results: ProductResult[], sort: SortOption): ProductResult
     }
 
     if (sort === "nearest") {
-      return a.merchant.distanceKm - b.merchant.distanceKm;
+      return merchantDistanceForSort(a.merchant) - merchantDistanceForSort(b.merchant);
     }
 
     if (sort === "highest-rated") {
@@ -321,8 +356,8 @@ export function searchHeatHubFromData(
         return false;
       }
 
-      const cityMatches = !city || merchant.city.toLowerCase() === city;
-      const countryMatches = !country || merchant.country.toLowerCase() === country;
+      const cityMatches = merchantCoversCity(merchant, city);
+      const countryMatches = merchantCoversCountry(merchant, country);
       const categoryMatches = !filters.category || product.category === filters.category;
       const deliveryMatches =
         !filters.delivery ||
@@ -358,9 +393,9 @@ export function searchHeatHubFromData(
     .map((service) => scoreService(service, weather));
 
   const merchantResults = dataset.merchants.filter((merchant) => {
-    const cityMatches = !city || merchant.city.toLowerCase() === city;
-    const countryMatches = !country || merchant.country.toLowerCase() === country;
-    const textMatches = !q || [merchant.name, merchant.city, merchant.country]
+    const cityMatches = merchantCoversCity(merchant, city);
+    const countryMatches = merchantCoversCountry(merchant, country);
+    const textMatches = !q || [merchant.name, merchant.city, merchant.country, merchant.coverageArea]
       .join(" ")
       .toLowerCase()
       .includes(q);

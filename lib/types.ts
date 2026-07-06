@@ -43,11 +43,12 @@ export type Merchant = {
   slug: string;
   country: string;
   city: string;
+  coverageArea?: string;
   websiteUrl: string;
   logoUrl: string;
   affiliateBaseUrl?: string;
   rating: number;
-  distanceKm: number;
+  distanceKm?: number;
   dataSourceId: string;
   createdAt: string;
   updatedAt: string;

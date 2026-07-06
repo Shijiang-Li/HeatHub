@@ -5,12 +5,19 @@ import { cities, merchants, products, serviceProviders } from "@/lib/data";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://heathub-xi.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/search", "/map", "/guides", "/about", "/privacy", "/terms"].map(
-    (path) => ({
-      url: `${siteUrl}${path}`,
-      lastModified: new Date("2026-07-05")
-    })
-  );
+  const staticRoutes = [
+    "",
+    "/search",
+    "/map",
+    "/guides",
+    "/guides/chinese-cooling-brands-europe",
+    "/about",
+    "/privacy",
+    "/terms"
+  ].map((path) => ({
+    url: `${siteUrl}${path}`,
+    lastModified: new Date("2026-07-06")
+  }));
 
   const productRoutes = products.map((product) => ({
     url: `${siteUrl}/products/${product.slug}`,

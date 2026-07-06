@@ -17,6 +17,16 @@ export const dataSources: DataSource[] = [
       "Manual fallback links to official merchant category pages and open data sources. Prices and availability are confirmed off-site.",
     updateFrequency: "Manual review",
     allowedUse: "Information display and official outbound redirects."
+  },
+  {
+    id: "source-chinese-brand-europe-official",
+    name: "Chinese-brand official Europe channels",
+    sourceType: "manual",
+    website: "https://www.midea.com/uk/where-to-buy",
+    licenseNotes:
+      "Curated official brand pages and distributor/contact directories for Chinese cooling brands active in Europe. No scraping, stock claims, checkout, or price reuse.",
+    updateFrequency: "Manual review",
+    allowedUse: "Information display, comparison context, and official outbound redirects."
   }
 ];
 
@@ -65,6 +75,15 @@ export const cities: City[] = [
     countryCode: "NL",
     latitude: 52.3676,
     longitude: 4.9041
+  },
+  {
+    id: "city-london",
+    name: "London",
+    slug: "london",
+    country: "United Kingdom",
+    countryCode: "GB",
+    latitude: 51.5072,
+    longitude: -0.1276
   }
 ];
 
@@ -138,6 +157,76 @@ export const merchants: Merchant[] = [
     dataSourceId: "source-curated-official-links",
     createdAt: "2026-07-01T08:00:00.000Z",
     updatedAt: "2026-07-05T04:15:00.000Z"
+  },
+  {
+    id: "merchant-midea-uk-official-channel",
+    name: "Midea UK official where-to-buy",
+    slug: "midea-uk-official-where-to-buy",
+    country: "United Kingdom",
+    city: "London",
+    coverageArea: "United Kingdom official channel",
+    websiteUrl: "https://www.midea.com/uk/where-to-buy",
+    logoUrl: "/merchant-placeholder.svg",
+    rating: 4.4,
+    dataSourceId: "source-chinese-brand-europe-official",
+    createdAt: "2026-07-06T08:00:00.000Z",
+    updatedAt: "2026-07-06T08:00:00.000Z"
+  },
+  {
+    id: "merchant-haier-italy-official-channel",
+    name: "Haier Italy official cooling channel",
+    slug: "haier-italy-official-cooling-channel",
+    country: "Italy",
+    city: "Milan",
+    coverageArea: "Italy official channel",
+    websiteUrl: "https://www.haier-europe.com/it_IT/pages/condizionatori-portatili",
+    logoUrl: "/merchant-placeholder.svg",
+    rating: 4.5,
+    dataSourceId: "source-chinese-brand-europe-official",
+    createdAt: "2026-07-06T08:00:00.000Z",
+    updatedAt: "2026-07-06T08:00:00.000Z"
+  },
+  {
+    id: "merchant-tcl-europe-official-channel",
+    name: "TCL Europe air conditioner channel",
+    slug: "tcl-europe-air-conditioner-channel",
+    country: "Europe",
+    city: "Europe",
+    coverageArea: "Europe-wide official channel",
+    websiteUrl: "https://www.tcl.com/eu/en/air-conditioners",
+    logoUrl: "/merchant-placeholder.svg",
+    rating: 4.3,
+    dataSourceId: "source-chinese-brand-europe-official",
+    createdAt: "2026-07-06T08:00:00.000Z",
+    updatedAt: "2026-07-06T08:00:00.000Z"
+  },
+  {
+    id: "merchant-gree-global-distributor-directory",
+    name: "Gree global distributor directory",
+    slug: "gree-global-distributor-directory",
+    country: "Europe",
+    city: "Europe",
+    coverageArea: "Europe-wide distributor directory",
+    websiteUrl: "https://global.gree.com/channels/140.html",
+    logoUrl: "/merchant-placeholder.svg",
+    rating: 4.4,
+    dataSourceId: "source-chinese-brand-europe-official",
+    createdAt: "2026-07-06T08:00:00.000Z",
+    updatedAt: "2026-07-06T08:00:00.000Z"
+  },
+  {
+    id: "merchant-aux-global-europe-channel",
+    name: "AUX Global air conditioning Europe channel",
+    slug: "aux-global-europe-channel",
+    country: "Europe",
+    city: "Europe",
+    coverageArea: "Europe-wide official channel",
+    websiteUrl: "https://www.auxair.com/global/",
+    logoUrl: "/merchant-placeholder.svg",
+    rating: 4.2,
+    dataSourceId: "source-chinese-brand-europe-official",
+    createdAt: "2026-07-06T08:00:00.000Z",
+    updatedAt: "2026-07-06T08:00:00.000Z"
   }
 ];
 
@@ -246,6 +335,111 @@ export const products: Product[] = [
     sourceUpdatedAt: "2026-07-05T04:15:00.000Z",
     createdAt: "2026-07-01T08:00:00.000Z",
     updatedAt: "2026-07-05T04:15:00.000Z"
+  },
+  {
+    id: "product-midea-uk-where-to-buy",
+    merchantId: "merchant-midea-uk-official-channel",
+    category: "portable-ac",
+    name: "Midea UK official air conditioning where-to-buy",
+    slug: "midea-uk-air-conditioning-where-to-buy",
+    brand: "Midea",
+    description:
+      "Chinese-brand official UK where-to-buy page for Midea air conditioning and renewables. Final merchant, price, and availability are confirmed on Midea or its listed partners.",
+    price: 0,
+    currency: "EUR",
+    deliveryEstimate: "Confirmed on official channel",
+    deliveryHours: 24,
+    pickupAvailable: false,
+    installationAvailable: true,
+    merchantProductUrl: "https://www.midea.com/uk/where-to-buy",
+    imageUrl: "/product-placeholder.svg",
+    sourceUpdatedAt: "2026-07-06T08:00:00.000Z",
+    createdAt: "2026-07-06T08:00:00.000Z",
+    updatedAt: "2026-07-06T08:00:00.000Z"
+  },
+  {
+    id: "product-haier-italy-portable-ac",
+    merchantId: "merchant-haier-italy-official-channel",
+    category: "portable-ac",
+    name: "Haier Italy portable air conditioners",
+    slug: "haier-italy-portable-air-conditioners",
+    brand: "Haier",
+    description:
+      "Chinese-brand official Haier Italy portable air conditioner page. Final product details, merchant options, and availability are confirmed on Haier Europe.",
+    price: 0,
+    currency: "EUR",
+    deliveryEstimate: "Confirmed on official channel",
+    deliveryHours: 24,
+    pickupAvailable: false,
+    installationAvailable: false,
+    merchantProductUrl: "https://www.haier-europe.com/it_IT/pages/condizionatori-portatili",
+    imageUrl: "/product-placeholder.svg",
+    sourceUpdatedAt: "2026-07-06T08:00:00.000Z",
+    createdAt: "2026-07-06T08:00:00.000Z",
+    updatedAt: "2026-07-06T08:00:00.000Z"
+  },
+  {
+    id: "product-tcl-europe-air-conditioners",
+    merchantId: "merchant-tcl-europe-official-channel",
+    category: "portable-ac",
+    name: "TCL Europe air conditioners",
+    slug: "tcl-europe-air-conditioners",
+    brand: "TCL",
+    description:
+      "Chinese-brand official TCL Europe air conditioner range covering portable, wall-mounted, and light commercial options. Final dealer and availability details are confirmed off-site.",
+    price: 0,
+    currency: "EUR",
+    deliveryEstimate: "Confirmed on official channel",
+    deliveryHours: 24,
+    pickupAvailable: false,
+    installationAvailable: true,
+    merchantProductUrl: "https://www.tcl.com/eu/en/air-conditioners",
+    imageUrl: "/product-placeholder.svg",
+    sourceUpdatedAt: "2026-07-06T08:00:00.000Z",
+    createdAt: "2026-07-06T08:00:00.000Z",
+    updatedAt: "2026-07-06T08:00:00.000Z"
+  },
+  {
+    id: "product-gree-global-distributors",
+    merchantId: "merchant-gree-global-distributor-directory",
+    category: "ac-installation",
+    name: "Gree official global distributor directory",
+    slug: "gree-official-global-distributor-directory",
+    brand: "Gree",
+    description:
+      "Chinese-brand official Gree distributor directory for finding regional air-conditioner channels. Final partner, product, and support details are confirmed on Gree or listed distributors.",
+    price: 0,
+    currency: "EUR",
+    deliveryEstimate: "Confirmed by listed distributor",
+    deliveryHours: 24,
+    pickupAvailable: false,
+    installationAvailable: true,
+    merchantProductUrl: "https://global.gree.com/channels/140.html",
+    imageUrl: "/product-placeholder.svg",
+    sourceUpdatedAt: "2026-07-06T08:00:00.000Z",
+    createdAt: "2026-07-06T08:00:00.000Z",
+    updatedAt: "2026-07-06T08:00:00.000Z"
+  },
+  {
+    id: "product-aux-global-europe-air-conditioning",
+    merchantId: "merchant-aux-global-europe-channel",
+    category: "ac-installation",
+    name: "AUX Global air conditioning Europe channel",
+    slug: "aux-global-europe-air-conditioning-channel",
+    brand: "AUX",
+    description:
+      "Chinese-brand official AUX air conditioning channel with Europe expansion and localized installation-service context. Final service and distributor details are confirmed off-site.",
+    price: 0,
+    currency: "EUR",
+    deliveryEstimate: "Confirmed on official channel",
+    deliveryHours: 24,
+    pickupAvailable: false,
+    installationAvailable: true,
+    merchantProductUrl: "https://www.auxair.com/global/",
+    imageUrl: "/product-placeholder.svg",
+    sourceUpdatedAt: "2026-07-06T08:00:00.000Z",
+    createdAt: "2026-07-06T08:00:00.000Z",
+    updatedAt: "2026-07-06T08:00:00.000Z"
   }
 ];
 
@@ -357,5 +551,14 @@ export const weatherSnapshots: WeatherSnapshot[] = [
     alertLevel: "normal",
     provider: "Demo weather provider",
     observedAt: "2026-07-05T07:00:00.000Z"
+  },
+  {
+    id: "weather-london",
+    cityId: "city-london",
+    temperatureC: 28,
+    condition: "Warm",
+    alertLevel: "normal",
+    provider: "Demo weather provider",
+    observedAt: "2026-07-06T07:00:00.000Z"
   }
 ];

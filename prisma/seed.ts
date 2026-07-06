@@ -121,7 +121,7 @@ async function main() {
         logoUrl: merchant.logoUrl,
         affiliateBaseUrl: merchant.affiliateBaseUrl,
         rating: merchant.rating,
-        distanceKm: merchant.distanceKm,
+        distanceKm: merchant.distanceKm ?? 99,
         dataSourceId: merchant.dataSourceId,
         createdAt: new Date(merchant.createdAt),
         updatedAt: new Date(merchant.updatedAt)
@@ -136,7 +136,7 @@ async function main() {
         logoUrl: merchant.logoUrl,
         affiliateBaseUrl: merchant.affiliateBaseUrl,
         rating: merchant.rating,
-        distanceKm: merchant.distanceKm,
+        distanceKm: merchant.distanceKm ?? 99,
         dataSourceId: merchant.dataSourceId,
         createdAt: new Date(merchant.createdAt),
         updatedAt: new Date(merchant.updatedAt)

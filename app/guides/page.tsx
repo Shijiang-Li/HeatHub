@@ -27,6 +27,11 @@ export default function GuidesPage() {
           body="During severe heat, official cooling centers may be the fastest option for immediate relief."
           href="/search?category=cooling-center"
         />
+        <Guide
+          title="Chinese cooling brands in Europe"
+          body="Find official European channels for Chinese air-conditioning brands such as Midea, Haier, TCL, Gree, and AUX."
+          href="/guides/chinese-cooling-brands-europe"
+        />
       </div>
     </div>
   );

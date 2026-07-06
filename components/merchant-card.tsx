@@ -5,6 +5,7 @@ import { OutboundLinkButton } from "@/components/outbound-link-button";
 
 export function MerchantCard({ merchant }: { merchant: Merchant }) {
   const destinationUrl = merchant.affiliateBaseUrl ?? merchant.websiteUrl;
+  const locationLabel = merchant.coverageArea ?? `${merchant.city}, ${merchant.country}`;
 
   return (
     <article className="rounded-md border border-line bg-white p-4">
@@ -15,16 +16,17 @@ export function MerchantCard({ merchant }: { merchant: Merchant }) {
               {merchant.name}
             </Link>
           </h2>
-          <p className="mt-1 text-sm text-ink/70">
-            {merchant.city}, {merchant.country}
-          </p>
+          <p className="mt-1 text-sm text-ink/70">{locationLabel}</p>
         </div>
         <span className="rounded-md bg-paper px-2 py-1 text-sm font-semibold">
           {merchant.rating.toFixed(1)}
         </span>
       </div>
       <dl className="mt-4 grid grid-cols-2 gap-3 text-sm">
-        <Metric label="Distance" value={`${merchant.distanceKm.toFixed(1)} km`} />
+        <Metric
+          label={merchant.distanceKm === undefined ? "Coverage" : "Distance"}
+          value={merchant.distanceKm === undefined ? "Official channel" : `${merchant.distanceKm.toFixed(1)} km`}
+        />
         <Metric label="Updated" value={formatDate(merchant.updatedAt)} />
       </dl>
       <div className="mt-4">

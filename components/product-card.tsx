@@ -5,6 +5,7 @@ import { OutboundLinkButton } from "@/components/outbound-link-button";
 
 export function ProductCard({ product }: { product: ProductResult }) {
   const destinationUrl = product.affiliateUrl ?? product.merchantProductUrl;
+  const locationLabel = product.merchant.coverageArea ?? product.merchant.city;
 
   return (
     <article className="grid gap-4 rounded-md border border-line bg-white p-4 shadow-soft md:grid-cols-[120px_1fr]">
@@ -39,7 +40,14 @@ export function ProductCard({ product }: { product: ProductResult }) {
             value={product.price > 0 ? `${product.currency} ${product.price}` : "Check official site"}
           />
           <Metric label="Delivery" value={product.deliveryEstimate} />
-          <Metric label="Distance" value={`${product.merchant.distanceKm.toFixed(1)} km`} />
+          <Metric
+            label={product.merchant.distanceKm === undefined ? "Coverage" : "Distance"}
+            value={
+              product.merchant.distanceKm === undefined
+                ? "Official channel"
+                : `${product.merchant.distanceKm.toFixed(1)} km`
+            }
+          />
           <Metric label="Rating" value={`${product.merchant.rating.toFixed(1)} / 5`} />
         </dl>
         <div className="flex flex-col gap-3 border-t border-line pt-4 sm:flex-row sm:items-center sm:justify-between">
@@ -50,7 +58,7 @@ export function ProductCard({ product }: { product: ProductResult }) {
             >
               {product.merchant.name}
             </Link>
-            <span> in {product.merchant.city}</span>
+            <span> in {locationLabel}</span>
             <p>Updated {formatDate(product.sourceUpdatedAt)}</p>
           </div>
           <OutboundLinkButton
